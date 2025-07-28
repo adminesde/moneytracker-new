@@ -45,6 +45,9 @@ export const generateMonthlyReport = (transactions: Transaction[], month: number
   doc.text(`Total Pengeluaran: ${formatCurrency(totalExpense)}`, margin, 65);
   doc.text(`Saldo: ${formatCurrency(balance)}`, margin, 75);
 
+  // Sort transactions by date
+  monthlyTransactions.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+
   // Transaction table
   const tableData = monthlyTransactions.map(t => [
     formatDate(t.date),
