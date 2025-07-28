@@ -99,7 +99,7 @@ const FinancialCharts: React.FC<FinancialChartsProps> = ({ onRefresh }) => {
       <div className="bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-sm border border-gray-50 dark:border-gray-700">
         <h3 className="text-lg font-bold mb-6 text-gray-900 dark:text-gray-100">Tren Bulanan</h3>
         <ResponsiveContainer width="100%" height={250}>
-          <LineChart data={monthlyTrendData} margin={{ left: 20, right: 0, top: 5, bottom: 5 }}>
+          <LineChart data={monthlyTrendData} margin={{ left: 40, right: 0, top: 5, bottom: 5 }}>
             <CartesianGrid strokeDasharray="3 3" stroke={gridColor} />
             <XAxis dataKey="name" stroke={textColor} />
             <YAxis stroke={textColor} tickFormatter={(value) => formatCurrency(value)} />
@@ -115,7 +115,7 @@ const FinancialCharts: React.FC<FinancialChartsProps> = ({ onRefresh }) => {
       <div className="bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-sm border border-gray-50 dark:border-gray-700">
         <h3 className="text-lg font-bold mb-6 text-gray-900 dark:text-gray-100">Tren Harian (Bulan Ini)</h3>
         <ResponsiveContainer width="100%" height={250}>
-          <LineChart data={dailyTrendData} margin={{ left: 20, right: 0, top: 5, bottom: 5 }}>
+          <LineChart data={dailyTrendData} margin={{ left: 40, right: 0, top: 5, bottom: 5 }}>
             <CartesianGrid strokeDasharray="3 3" stroke={gridColor} />
             <XAxis dataKey="name" stroke={textColor} />
             <YAxis stroke={textColor} tickFormatter={(value) => formatCurrency(value)} />
