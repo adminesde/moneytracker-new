@@ -59,7 +59,7 @@ const History: React.FC<HistoryProps> = ({ onEditTransaction }) => {
   };
 
   return (
-    <div className="flex-1 bg-gray-50 dark:bg-gray-900 pb-28 px-4 text-gray-900 dark:text-gray-100 overflow-y-auto">
+    <div className="flex-1 bg-gray-50 dark:bg-gray-900 pb-28 px-4 text-gray-900 dark:text-gray-100 overflow-y-auto h-screen">
       {/* Header */}
       <div className="pt-12 pb-6 flex justify-between items-center">
         <div>

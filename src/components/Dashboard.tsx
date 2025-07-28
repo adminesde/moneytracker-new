@@ -132,7 +132,7 @@ const Dashboard: React.FC<DashboardProps> = ({ onShowReports, onAddTransaction }
   };
 
   return (
-    <div className="flex-1 bg-gray-50 dark:bg-gray-900 pb-28 text-gray-900 dark:text-gray-100 overflow-y-auto">
+    <div className="flex-1 bg-gray-50 dark:bg-gray-900 pb-28 text-gray-900 dark:text-gray-100 overflow-y-auto h-screen">
       {/* Header */}
       <div 
         className={`pt-6 pb-10 rounded-b-3xl text-white shadow-lg relative overflow-hidden`} 
