@@ -4,7 +4,7 @@ import {
   PieChart, Pie, Cell, Legend
 } from 'recharts';
 import { formatCurrency } from '../utils/dateUtils';
-import { format, parseISO, startOfMonth, endOfMonth, eachDayOfInterval, getMonth, getYear } from 'date-fns';
+import { format, parse, parseISO, startOfMonth, endOfMonth, eachDayOfInterval, getMonth, getYear } from 'date-fns';
 import { id } from 'date-fns/locale';
 import { useTheme } from '../context/ThemeContext';
 import { useTransactions } from '../hooks/useTransactions';
@@ -41,7 +41,11 @@ const FinancialCharts: React.FC<FinancialChartsProps> = ({ onRefresh }) => {
 
     const sortedData = Array.from(monthlyDataMap.entries())
       .map(([name, values]) => ({ name, ...values }))
-      .sort((a, b) => parseISO(format(new Date(`1 ${a.name}`), 'yyyy-MM-dd')).getTime() - parseISO(format(new Date(`1 ${b.name}`), 'yyyy-MM-dd')).getTime());
+      .sort((a, b) => {
+        const dateA = parse(a.name, 'MMM yyyy', new Date(), { locale: id });
+        const dateB = parse(b.name, 'MMM yyyy', new Date(), { locale: id });
+        return dateA.getTime() - dateB.getTime();
+      });
 
     return sortedData;
   };
